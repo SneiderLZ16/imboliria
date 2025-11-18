@@ -1,0 +1,31 @@
+import { API_URL } from "./config";
+
+// POST /api/Auth/login
+export async function loginRequest(credentials) {
+  const res = await fetch(`${API_URL}/Auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(credentials),
+  });
+
+  if (!res.ok) {
+    throw new Error("Credenciales inválidas");
+  }
+
+  return res.json(); 
+}
+
+// POST /api/Auth/register
+export async function registerRequest(data) {
+  const res = await fetch(`${API_URL}/Auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) {
+    throw new Error("Error al registrar usuario");
+  }
+
+  return res.json(); 
+}
