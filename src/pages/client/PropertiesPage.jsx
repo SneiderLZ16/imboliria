@@ -18,9 +18,9 @@ function PropertiesPage() {
   const [searchLoading, setSearchLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // ======================
+  
   // CARGAR TODAS LAS PROPIEDADES
-  // ======================
+  
   useEffect(() => {
     async function load() {
       try {
@@ -39,9 +39,9 @@ function PropertiesPage() {
     if (accessToken) load();
   }, [accessToken]);
 
-  // ======================
+  
   // BUSCAR POR ID
-  // ======================
+ 
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchId.trim()) return;
@@ -77,9 +77,9 @@ function PropertiesPage() {
     }
   };
 
-  // ======================
+  
   // MODAL DETALLES
-  // ======================
+  
   const handleViewDetails = (property) => {
     const firstImage =
       property.images?.length > 0
@@ -105,16 +105,16 @@ function PropertiesPage() {
     navigate("/login", { replace: true });
   };
 
-  // ======================
+ 
   // RENDER
-  // ======================
+  
   return (
     <div className="page-container">
       <div className="card properties-card">
 
-        {/* ======================
+        {/* 
             ENCABEZADO
-        ====================== */}
+         */}
         <header
           style={{
             display: "flex",
@@ -126,7 +126,7 @@ function PropertiesPage() {
           <h1 className="page-title">Properties</h1>
 
           <div style={{ display: "flex", gap: "10px" }}>
-            {/* BOTÓN DE CREAR SOLO PARA ADMIN */}
+            {/*  CREAR SOLO PARA ADMIN */}
             {isAdmin && (
               <button
                 onClick={() => navigate("/admin/properties/new")}
@@ -163,9 +163,9 @@ function PropertiesPage() {
           </div>
         </header>
 
-        {/* ======================
+        {/* 
             BUSCADOR POR ID
-        ====================== */}
+        */}
         <form className="search-bar" onSubmit={handleSearch}>
           <label htmlFor="propertyId" className="search-label">
             Buscar por ID
@@ -204,15 +204,15 @@ function PropertiesPage() {
           </div>
         </form>
 
-        {/* ======================
+        {/* 
             MENSAJES DE ESTADO
-        ====================== */}
+        */}
         {error && <p className="empty-text">{error}</p>}
         {loading && <p className="empty-text">Cargando propiedades...</p>}
 
-        {/* ======================
+        {/* 
             LISTA DE PROPIEDADES
-        ====================== */}
+         */}
         {!loading && properties.length > 0 && (
           <div className="properties-list">
             {properties.map((property) => {
@@ -249,7 +249,7 @@ function PropertiesPage() {
                       })}
                     </p>
 
-                    {/* BOTÓN VER DETALLES */}
+                    {/* VER DETALLES */}
                     <button
                       className="property-button"
                       onClick={() => handleViewDetails(property)}
@@ -257,7 +257,7 @@ function PropertiesPage() {
                       Ver detalles
                     </button>
 
-                    {/* BOTÓN EDITAR — SOLO ADMIN */}
+                    {/*  EDITAR — SOLO ADMIN */}
                     {isAdmin && (
                       <button
                         className="property-button"
@@ -273,7 +273,7 @@ function PropertiesPage() {
                       </button>
                     )}
 
-                    {/* BOTÓN ELIMINAR — SOLO ADMIN */}
+                    {/*  ELIMINAR — SOLO ADMIN */}
                     {isAdmin && (
                       <button
                         className="property-button"

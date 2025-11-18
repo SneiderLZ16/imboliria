@@ -18,9 +18,9 @@ function EditPropertyPage() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
-  // ============================
+ 
   // CARGAR PROPIEDAD EXISTENTE
-  // ============================
+  
   useEffect(() => {
     async function loadData() {
       try {
@@ -42,22 +42,22 @@ function EditPropertyPage() {
     loadData();
   }, [id, accessToken]);
 
-  // ============================
+  
   // CONTROL DE FORMULARIO
-  // ============================
+ 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // ============================
+  
   // SUBMIT PARA ACTUALIZAR
-  // ============================
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
 
     try {
-      // 👉 IMPORTANTE: Enviamos el ID en el cuerpo
+      
       await updateProperty(id, { ...form, id: Number(id) }, accessToken);
 
       setMessage("Propiedad actualizada correctamente.");

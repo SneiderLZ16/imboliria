@@ -4,7 +4,7 @@ import HomePage from "./pages/client/HomePage.jsx";
 import LoginPage from "./pages/auth/LoginPage.jsx";
 import RegisterPage from "./pages/auth/RegisterPage.jsx";
 import PropertiesPage from "./pages/client/PropertiesPage.jsx";
-import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
+import AdminDashboard from "pages/admin/AdminDashboard.jsx";
 import CreatePropertyPage from "./pages/admin/createPropertyPage.jsx";
 
 import PrivateRoute from "./routes/privateRoute.jsx";

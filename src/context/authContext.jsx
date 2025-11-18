@@ -63,7 +63,7 @@ export function AuthProvider({ children }) {
       localStorage.removeItem("refreshToken");
     }
 
-    // 👇 Decodificar rol desde el token
+    //  Decodificar rol desde el token
     const payload = parseJwt(access);
     if (payload) {
       const r =

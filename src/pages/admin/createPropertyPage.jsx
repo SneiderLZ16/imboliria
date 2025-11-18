@@ -44,7 +44,7 @@ function CreatePropertyPage() {
     <div className="page-container">
       <div className="card form-card">
 
-        {/* BOTÓN VOLVER ARREGLADO */}
+        {/* BOTÓN VOLVER  */}
         <button
           type="button"
           onClick={() => navigate(-1)}
